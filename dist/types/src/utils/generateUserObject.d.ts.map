@@ -1,0 +1,1 @@
+{"version":3,"file":"generateUserObject.d.ts","sourceRoot":"","sources":["../../../../src/utils/generateUserObject.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,YAAY,EAAE,SAAS,EAAE,MAAM,UAAU,CAAC;AAGrE,KAAK,kBAAkB,GAAG,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC,CAAC;AAC9C,eAAO,MAAM,kBAAkB,GAC7B,SAAS,YAAY,EACrB,aAAa,gBAAgB,kCA6D9B,CAAC"}

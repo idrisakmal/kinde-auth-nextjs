@@ -61,19 +61,34 @@ export const appRouterSessionManager = (cookieStore, persistent = true) => {
      * @returns {Promise<string | object | null>}
      */
     getSessionItem: (itemKey) => {
+      console.log('[KINDE-DEBUG] getSessionItem called', { itemKey });
       const item = cookieStore.get(itemKey);
-      if (!item) return null;
+      if (!item) {
+        console.log('[KINDE-DEBUG] getSessionItem not found', { itemKey });
+        return null;
+      }
       let itemValue = "";
       try {
         let index = 0;
         let key = `${String(itemKey)}${index === 0 ? "" : index}`;
+        let chunkCount = 0;
         while (cookieStore.has(key)) {
           itemValue += cookieStore.get(key).value;
           index++;
+          chunkCount++;
           key = `${String(itemKey)}${index === 0 ? "" : index}`;
         }
+        console.log('[KINDE-DEBUG] getSessionItem found', {
+          itemKey,
+          chunkCount,
+          valueLength: itemValue.length,
+        });
         return destr(itemValue);
       } catch (error) {
+        console.error('[KINDE-DEBUG] Failed to parse session item', {
+          itemKey,
+          error: error instanceof Error ? error.message : String(error),
+        });
         if (config.isDebugMode)
           console.error("Failed to parse session item app router:", error);
         return itemValue || item.value;
@@ -86,6 +101,11 @@ export const appRouterSessionManager = (cookieStore, persistent = true) => {
      * @returns {Promise<void>}
      */
     setSessionItem: (itemKey, itemValue) => {
+      console.log('[KINDE-DEBUG] setSessionItem called', {
+        itemKey,
+        hasValue: itemValue !== undefined,
+        valueType: typeof itemValue,
+      });
       cookieStore
         .getAll()
         .map((c) => c.name)
@@ -97,7 +117,13 @@ export const appRouterSessionManager = (cookieStore, persistent = true) => {
       if (itemValue !== undefined) {
         const itemValueString =
           typeof itemValue === "object" ? JSON.stringify(itemValue) : itemValue;
-        splitString(itemValueString, MAX_COOKIE_LENGTH).forEach(
+        const chunks = splitString(itemValueString, MAX_COOKIE_LENGTH);
+        console.log('[KINDE-DEBUG] setSessionItem storing', {
+          itemKey,
+          chunks: chunks.length,
+          totalLength: itemValueString.length,
+        });
+        chunks.forEach(
           (value, index) => {
             cookieStore.set(itemKey + (index === 0 ? "" : index), value, {
               maxAge: sessionState.persistent ? TWENTY_NINE_DAYS : undefined,

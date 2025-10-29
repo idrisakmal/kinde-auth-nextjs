@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("./sessionManager.cjs.js"),a=(e,s)=>async()=>await(await t.sessionManager(e,s)).getSessionItem("access_token");exports.getAccessTokenRawFactory=a;

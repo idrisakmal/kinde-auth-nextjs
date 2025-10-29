@@ -1,0 +1,1 @@
+{"version":3,"file":"KindeProvider.d.ts","sourceRoot":"","sources":["../../../../src/frontend/KindeProvider.tsx"],"names":[],"mappings":"AAEA,OAAO,KAAK,MAAM,OAAO,CAAC;AAK1B,KAAK,kBAAkB,GAAG;IACxB,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;IAC1B,kBAAkB,CAAC,EAAE,OAAO,CAAC;CAC9B,CAAC;AAEF,eAAO,MAAM,aAAa,GAAI,mCAG3B,kBAAkB,sBAqBpB,CAAC"}

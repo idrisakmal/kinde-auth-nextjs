@@ -1,0 +1,1 @@
+{"version":3,"file":"getFlag.d.ts","sourceRoot":"","sources":["../../../../src/session/getFlag.js"],"names":[],"mappings":"AAkBO,qCAJI,OAAO,MAAM,EAAE,cAAc,QAC7B,OAAO,MAAM,EAAE,eAAe,GAC5B,OAAO,CAsDjB;6BAhEQ,MAAM,gBACN,OAAO,GAAG,MAAM,GAAG,MAAM,YACzB,OAAO,UAAU,EAAE,iBAAiB,KAClC,OAAO,CAAC,OAAO,UAAU,EAAE,SAAS,GAAG;IAAC,KAAK,EAAE,OAAO,GAAG,MAAM,GAAG,MAAM,CAAA;CAAC,CAAC"}

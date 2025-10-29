@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../utils/generateOrganizationObject.cjs.js"),n=(t,r)=>()=>!t||!r?null:e.generateOrganizationObject(t,r);exports.getOrganizationFactory=n;

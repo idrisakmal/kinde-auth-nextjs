@@ -1,0 +1,23 @@
+/**
+ * @typedef {Object} PropsType
+ * @prop {React.ReactNode} children
+ * @prop {string} [orgCode]
+ * @prop {string} [postLoginRedirectURL]
+ * @prop {Object.<string, string>} [authUrlParams]
+ *
+ * @typedef {PropsType & React.AnchorHTMLAttributes<HTMLAnchorElement>} Props
+ */
+/**
+ * @param {Props} props
+ */
+export function RegisterLink({ children, orgCode, postLoginRedirectURL, authUrlParams, ...props }: Props): import("react").JSX.Element;
+export type PropsType = {
+    children: React.ReactNode;
+    orgCode?: string;
+    postLoginRedirectURL?: string;
+    authUrlParams?: {
+        [x: string]: string;
+    };
+};
+export type Props = PropsType & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+//# sourceMappingURL=RegisterLink.d.ts.map

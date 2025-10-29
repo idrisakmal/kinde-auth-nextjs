@@ -1,0 +1,1 @@
+{"version":3,"file":"getAccessToken.d.ts","sourceRoot":"","sources":["../../../../src/utils/getAccessToken.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAE,eAAe,EAAE,MAAM,MAAM,CAAC;AAEvD,OAAO,EAAE,YAAY,EAAE,MAAM,aAAa,CAAC;AAE3C,eAAO,MAAM,cAAc,GACzB,KAAK,cAAc,EACnB,MAAM,eAAe,GAAG,YAAY,oBAgCrC,CAAC"}

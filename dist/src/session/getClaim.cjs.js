@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=require("./sessionManager.cjs.js"),o=require("./kindeServerClient.cjs.js"),s=require("../config/index.cjs.js"),c=(r,i)=>async(n,t)=>{try{return await o.kindeClient.getClaim(await a.sessionManager(r,i),n,t)}catch(e){return s.config.isDebugMode&&console.error(e),null}};exports.getClaimFactory=c;

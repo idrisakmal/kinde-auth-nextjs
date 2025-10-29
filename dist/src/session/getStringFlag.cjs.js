@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./getFlag.cjs.js"),n=require("../config/index.cjs.js"),c=(t,r)=>async(a,g)=>{try{return(await o.getFlagFactory(t,r)(a,g,"s")).value}catch(e){return n.config.isDebugMode&&console.error(e),null}};exports.getStringFlagFactory=c;

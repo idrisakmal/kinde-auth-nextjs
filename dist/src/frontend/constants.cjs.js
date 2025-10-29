@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e={accessToken:null,accessTokenEncoded:null,error:null,featureFlags:{},idToken:null,idTokenRaw:null,isAuthenticated:!1,isLoading:!0,organization:null,permissions:null,user:null,userOrganizations:null};exports.DefaultKindeNextClientState=e;

@@ -1,0 +1,1 @@
+{"version":3,"file":"getIdToken.d.ts","sourceRoot":"","sources":["../../../../src/utils/getIdToken.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAE,eAAe,EAAE,MAAM,MAAM,CAAC;AAIvD,eAAO,MAAM,UAAU,GACrB,KAAK,cAAc,EACnB,MAAM,eAAe,oBAkCtB,CAAC"}

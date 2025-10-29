@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const c=require("react"),s=r=>{const[t,n]=c.useState({current:r});return[()=>t.current,e=>{n({current:e}),t.current=e}]};exports.useSyncState=s;
