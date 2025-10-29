@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("react/jsx-runtime"),r=require("../config/index.cjs.js");function o({children:t,orgName:e,...n}){return i.jsx("a",{href:`${r.config.apiPath}/${r.routes.createOrg}${e?`?org_name=${e}`:""}`,...n,children:t})}exports.CreateOrgLink=o;

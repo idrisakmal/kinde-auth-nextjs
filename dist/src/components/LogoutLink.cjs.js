@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react/jsx-runtime"),t=require("../config/index.cjs.js");function i({children:o,postLogoutRedirectURL:e,...r}){return u.jsx("a",{href:`${t.config.apiPath}/${t.routes.logout}${e?`?post_logout_redirect_url=${e}`:""}`,...r,children:o})}exports.LogoutLink=i;

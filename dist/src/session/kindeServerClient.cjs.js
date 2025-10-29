@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@kinde-oss/kinde-typescript-sdk"),i=require("../config/index.cjs.js"),n=e.createKindeServerClient(e.GrantType.AUTHORIZATION_CODE,i.config.clientOptions);exports.kindeClient=n;

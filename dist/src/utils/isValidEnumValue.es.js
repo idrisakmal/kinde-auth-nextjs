@@ -1,0 +1,6 @@
+function n(e, u) {
+  return Object.values(e).includes(u);
+}
+export {
+  n as isValidEnumValue
+};

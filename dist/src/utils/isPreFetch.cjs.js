@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});function t(e){return!!(e.get("purpose")==="prefetch"||e.get("x-purpose")==="prefetch"||e.get("x-moz")==="prefetch")}exports.isPreFetch=t;

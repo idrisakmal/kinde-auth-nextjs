@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("../../config/index.cjs.js"),e=require("../constants.cjs.js"),i=()=>({maxAge:e.TWENTY_NINE_DAYS,domain:o.config.cookieDomain?o.config.cookieDomain:void 0,...e.GLOBAL_COOKIE_OPTIONS});exports.getStandardCookieOptions=i;

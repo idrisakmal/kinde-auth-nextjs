@@ -1,0 +1,1 @@
+{"version":3,"file":"getUserOrganizations.d.ts","sourceRoot":"","sources":["../../../../src/session/getUserOrganizations.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,cAAc,EAAE,eAAe,EAAE,MAAM,MAAM,CAAC;AACvD,OAAO,EAAE,kBAAkB,EAAE,MAAM,UAAU,CAAC;AAE9C,eAAO,MAAM,2BAA2B,GACrC,MAAM,cAAc,EAAE,MAAM,eAAe,WAClC,OAAO,CAAC,kBAAkB,GAAG,IAAI,CAqD1C,CAAC"}
