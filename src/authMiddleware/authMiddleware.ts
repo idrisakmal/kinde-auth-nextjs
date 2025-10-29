@@ -17,6 +17,13 @@ import { TWENTY_NINE_DAYS } from "src/utils/constants";
 const handleMiddleware = async (req, options, onSuccess) => {
   const { pathname, search } = req.nextUrl;
 
+  // [KINDE-DEBUG] Log middleware start
+  console.log('[KINDE-DEBUG] authMiddleware started', {
+    pathname,
+    search,
+    timestamp: new Date().toISOString(),
+  });
+
   const isReturnToCurrentPage = options?.isReturnToCurrentPage;
   const orgCode: string | undefined = options?.orgCode;
   const loginPage = options?.loginPage || `${config.apiPath}/${routes.login}`;
@@ -89,6 +96,12 @@ const handleMiddleware = async (req, options, onSuccess) => {
     isTokenExpired(kindeAccessToken, 20) ||
     isTokenExpired(kindeIdToken, 20)
   ) {
+    console.log('[KINDE-DEBUG] Token expired, attempting refresh', {
+      accessTokenExpired: isTokenExpired(kindeAccessToken, 20),
+      idTokenExpired: isTokenExpired(kindeIdToken, 20),
+      pathname,
+    });
+
     if (config.isDebugMode) {
       console.log("authMiddleware: access token expired, refreshing");
     }
@@ -97,6 +110,7 @@ const handleMiddleware = async (req, options, onSuccess) => {
       if (config.isDebugMode) {
         console.error(debugMessage);
       }
+      console.error('[KINDE-DEBUG] Token refresh failed:', debugMessage);
       if (!isPublicPath) {
         return NextResponse.redirect(
           new URL(
@@ -109,9 +123,15 @@ const handleMiddleware = async (req, options, onSuccess) => {
     };
 
     try {
+      console.log('[KINDE-DEBUG] Calling kindeClient.refreshTokens');
       refreshResponse = await kindeClient.refreshTokens(session, false);
       kindeAccessToken = refreshResponse.access_token;
       kindeIdToken = refreshResponse.id_token;
+      console.log('[KINDE-DEBUG] Token refresh succeeded', {
+        hasAccessToken: !!refreshResponse.access_token,
+        hasIdToken: !!refreshResponse.id_token,
+        hasRefreshToken: !!refreshResponse.refresh_token,
+      });
       if (config.isDebugMode) {
         console.log(
           "authMiddleware: tokens refreshed",
@@ -120,6 +140,11 @@ const handleMiddleware = async (req, options, onSuccess) => {
         );
       }
     } catch (error) {
+      console.error('[KINDE-DEBUG] Token refresh error', {
+        errorMessage: error instanceof Error ? error.message : String(error),
+        errorStack: error instanceof Error ? error.stack : undefined,
+        pathname,
+      });
       const result = sendResult("authMiddleware: error refreshing tokens");
       if (result) return result;
     }
